@@ -25,7 +25,7 @@ LABEL \
       org.label-schema.name="cura3d" \
       org.label-schema.description="Docker container for Cura3D" \
       org.label-schema.version="unknown" \
-      org.label-schema.vcs-url="https://github.com/8layer8/docker-cura3d" \
+      org.label-schema.vcs-url="https://github.com/8layer8/docker-cura" \
       org.label-schema.schema-version="1.0"
       
 # Set the name of the application.
