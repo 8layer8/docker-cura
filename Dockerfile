@@ -9,6 +9,7 @@ RUN mkdir -p /usr/share/cura
 RUN mkdir /storage
 RUN mkdir /output
 
+# To upgrade, change this link here and rebuild the image. This can probably be tweaked to always pull latest.
 RUN wget -O /usr/share/cura/Ultimaker_Cura.AppImage https://software.ultimaker.com/cura/Ultimaker_Cura-4.6.1.AppImage
 RUN chmod a+x /usr/share/cura/Ultimaker_Cura.AppImage
 
@@ -32,6 +33,8 @@ LABEL \
 ENV APP_NAME="Cura3D"
 
 # Testing:
+# docker rm cura-docker-test
+# docker rmi cura-docker
 # docker build -t cura-docker .
-# docker run --rm -p 5805:5800 --name cura-docker-test cura-docker
-# Needs mount points
+# docker images
+# docker run --rm -p 5805:5800 -name cura-docker-test cura-docker
