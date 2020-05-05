@@ -33,8 +33,8 @@ LABEL \
 ENV APP_NAME="Cura3D"
 
 # Testing:
-# docker rm cura-docker-test
-# docker rmi cura-docker
-# docker build -t cura-docker .
+# docker rm docker-cura-test
+# docker rmi docker-cura
+# docker build -t docker-cura .
 # docker images
-# docker run --rm -p 5805:5800 -name cura-docker-test cura-docker
+# docker run --rm -p 5805:5800 -name docker-cura-test docker-cura
