@@ -8,6 +8,7 @@ RUN mkdir -p /usr/share/cura
 # RUN mkdir /config # already exists
 RUN mkdir /storage
 RUN mkdir /output
+RUN chmod 777 /output
 
 # To upgrade, change this link here and rebuild the image. This can probably be tweaked to always pull latest.
 RUN wget -O /usr/share/cura/Ultimaker_Cura.AppImage https://software.ultimaker.com/cura/Ultimaker_Cura-4.6.1.AppImage
