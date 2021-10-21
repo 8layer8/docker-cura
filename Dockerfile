@@ -11,7 +11,8 @@ RUN mkdir /output
 RUN chmod 777 /output
 
 # To upgrade, change this link here and rebuild the image. This can probably be tweaked to always pull latest.
-RUN wget -O /usr/share/cura/Ultimaker_Cura.AppImage https://software.ultimaker.com/cura/Ultimaker_Cura-4.6.1.AppImage
+# RUN wget -O /usr/share/cura/Ultimaker_Cura.AppImage https://software.ultimaker.com/cura/Ultimaker_Cura-4.6.1.AppImage
+RUN wget -O /usr/share/cura/Ultimaker_Cura.AppImage https://storage.googleapis.com/software.ultimaker.com/cura/Ultimaker_Cura-4.11.0.AppImage
 RUN chmod a+x /usr/share/cura/Ultimaker_Cura.AppImage
 
 # Copy the start script.
