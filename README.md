@@ -13,7 +13,7 @@ Mount /config, /storage and /output as persistent volumes
 
 
 # Sample
-
+```
 ---
 version: '3.7'
 services:
@@ -29,9 +29,10 @@ services:
       - ${VM_STORAGE}/cura/config:/config
       - /mnt/files/3D-Print:/storage
       - ${VM_STORAGE}/cura/output:/output
-
+```
 
 # With traefik
+```
 ---
 version: '3.7'
 services:
@@ -69,3 +70,4 @@ services:
       - traefik.port=5800
       - traefik.frontend.entryPoints=https
       - traefik.frontend.headers.SSLRedirect=true
+```
