@@ -71,3 +71,48 @@ services:
       - traefik.frontend.entryPoints=https
       - traefik.frontend.headers.SSLRedirect=true
 ```
+
+# Docker Swarm
+```
+version: '3.7' 
+services: 
+  cura: 
+    image: mindcrime30/docker-cura:4.12.0 
+    environment: 
+      - PUID=1020
+      - PGID=1020
+      - TZ=America/New_York
+    networks:
+      - net
+#      - traefik-public
+    ports: 
+      - 5800:5800
+      # Internal only, access it at any node ip:5800
+    volumes: 
+      - /mnt/pool_alpha/vm_storage/cura/config:/config 
+      - /mnt/pool_alpha/shared:/storage 
+      - /mnt/pool_alpha/vm_storage/cura/output:/output
+    deploy:
+      labels:
+        - needs.something.to.deploy=true
+        # My Cura is INTERNAL only
+        # - traefik.enable=true
+        # - traefik.docker.network=traefik-public
+        # - traefik.constraint-label=traefik-public
+        # - traefik.http.routers.cura-http.rule=Host(`${DOMAIN?Variable not set}`)
+        # - traefik.http.routers.cura-http.entrypoints=http
+        # - traefik.http.routers.cura-http.middlewares=https-redirect
+        # - traefik.http.routers.cura-https.rule=Host(`${DOMAIN?Variable not set}`)
+        # - traefik.http.routers.cura-https.entrypoints=https
+        # - traefik.http.routers.cura-https.tls=true
+        # - traefik.http.routers.cura-https.tls.certresolver=le
+        # - traefik.http.services.cura.loadbalancer.server.port=5800
+
+networks:
+  net:
+    driver: overlay
+    attachable: true
+#  traefik-public:
+#    external: true
+
+```
