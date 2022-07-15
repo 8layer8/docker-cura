@@ -32,6 +32,9 @@ LABEL \
       org.label-schema.vcs-url="https://github.com/8layer8/docker-cura" \
       org.label-schema.schema-version="1.0"
       
+# Set the window name so full screen plugins (like Thingibrowser) can be closed
+RUN sed-patch 's/<application type="normal">/<application type="normal" title="Ultimaker Cura">/' /etc/xdg/openbox/rc.xml
+
 # Set the name of the application.
 ENV APP_NAME="Cura3D"
 
