@@ -1,7 +1,7 @@
 # docker-cura
 Cura 3D in a Docker container, Web UI
 
-```
+```bash
 docker rm docker-cura-test
 docker rmi docker-cura
 docker build -t docker-cura .
@@ -13,7 +13,7 @@ Mount /config, /storage and /output as persistent volumes
 
 
 # Sample
-```
+```yaml
 ---
 version: '3.7'
 services:
@@ -32,7 +32,7 @@ services:
 ```
 
 # With traefik
-```
+```yaml
 ---
 version: '3.7'
 services:
@@ -73,7 +73,7 @@ services:
 ```
 
 # Docker Swarm
-```
+```yaml
 version: '3.7' 
 services: 
   cura: 
